@@ -1,0 +1,14 @@
+# Datasets
+scale-*-package*
+mini-*-package*
+*.tar.gz
+*.tgz
+*.tar
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# System
+.DS_Store
