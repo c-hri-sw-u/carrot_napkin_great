@@ -1,8 +1,8 @@
 const CONFIG = {
     langMap: {
-        'de': { name: 'german', package: 'scale-german-package-k3', label: 'German' },
-        'ja': { name: 'japanese', package: 'scale-japanese-package-k3', label: 'Japanese' },
-        'es': { name: 'spanish', package: 'scale-spanish-package-k3', label: 'Spanish' }
+        'de': { name: 'german', package: 'mini-german-package-k3', label: 'German' },
+        'ja': { name: 'japanese', package: 'mini-japanese-package-k3', label: 'Japanese' },
+        'es': { name: 'spanish', package: 'mini-spanish-package-k3', label: 'Spanish' }
     },
     masteryThreshold: 5, // Updated to 5
     

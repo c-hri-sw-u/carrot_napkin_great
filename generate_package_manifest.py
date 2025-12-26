@@ -2,9 +2,9 @@ import os
 import json
 
 packages = [
-    'scale-german-package-k3',
-    'scale-japanese-package-k3',
-    'scale-spanish-package-k3'
+    'mini-german-package-k3',
+    'mini-japanese-package-k3',
+    'mini-spanish-package-k3'
 ]
 
 manifest = {}
