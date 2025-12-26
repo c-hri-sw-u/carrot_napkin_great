@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Settings</h2>
+                <div class="settings-section">
+                    <h3>Change Language</h3>
+                    <div class="button-group" style="margin-top: 10px;">
+                        <button class="settings-lang-btn" data-lang="de">German</button>
+                        <button class="settings-lang-btn" data-lang="ja">Japanese</button>
+                        <button class="settings-lang-btn" data-lang="es">Spanish</button>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>Change Mode</h3>
+                    <div class="button-group" style="margin-top: 10px;">
+                        <button id="settings-restart-btn">Restart Endless Mode</button>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>Change Character</h3>
+                    <div class="button-group" style="margin-top: 10px;" id="settings-char-container">
+                        <!-- Character buttons injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warmup Screen -->
+        <div id="warmup-screen" class="screen">
+            <h1>Warm Up</h1>
+            <p>Listen and choose the correct image!</p>
+            <div id="warmup-character-area" style="width: 200px; height: 200px; margin: 0 auto;">
+                <img id="warmup-character-img" src="" alt="Character" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div id="warmup-start-container" style="margin: 20px 0;">
+                <button id="warmup-start-btn" style="font-size: 24px; padding: 15px 40px; background-color: #2196F3;">Start Game</button>
+            </div>
+            <div id="warmup-options-area" style="display: none; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                <!-- Options will be injected here -->
+            </div>
+            <div id="warmup-message" style="margin-top: 20px; height: 20px;"></div>
+        </div>
+
+        <!-- Language Selection Screen -->
+        <div id="language-screen" class="screen hidden">
+            <h1>Select Language</h1>
+            <div class="button-group">
+                <button data-lang="de" class="lang-btn">German (Deutsch)</button>
+                <button data-lang="ja" class="lang-btn">Japanese (日本語)</button>
+                <button data-lang="es" class="lang-btn">Spanish (Español)</button>
+            </div>
+        </div>
+
+        <!-- Mode Selection Screen -->
+        <div id="mode-screen" class="screen hidden">
+            <h1>Select Mode</h1>
+            <div class="button-group">
+                <button id="endless-mode-btn">Endless Mode</button>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="screen hidden">
+            <h1>Loading...</h1>
+            <div id="loading-status">Initializing...</div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <!-- Treat Counter -->
+            <div id="treat-counter" style="position: absolute; top: 20px; left: 20px; font-size: 20px; font-weight: bold; background: rgba(255, 255, 255, 0.8); padding: 5px 10px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 5px;">
+                <span style="font-size: 24px;">🐟</span>
+                <span id="treat-count-value">0</span>
+            </div>
+
+            <!-- Settings Button -->
+            <button id="settings-btn" style="position: absolute; top: 20px; right: 20px; width: auto; padding: 5px 15px; font-size: 16px; font-weight: bold; background: rgba(255, 255, 255, 0.8); border: none; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; color: #333; display: flex; align-items: center; gap: 5px;">⚙️ Settings</button>
+
+            <div id="character-area">
+                <img id="character-img" src="" alt="Character" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 20px;">
+                <button id="delete-word-btn" style="background: none; border: none; font-size: 24px; cursor: pointer; padding: 5px; width: auto;" title="Remove Word">🗑️</button>
+                <div id="current-word" style="font-size: 32px; font-weight: bold;"></div>
+                <button id="replay-audio-btn" style="background: none; border: none; font-size: 24px; cursor: pointer; padding: 5px; width: auto;" title="Replay Audio">🔊</button>
+            </div>
+            <div id="options-area">
+                <!-- Options will be injected here -->
+            </div>
+            <div id="message-area" style="margin-top: 20px; height: 20px;"></div>
+            
+            <!-- Progress Bar -->
+            <div id="progress-container">
+                <div class="progress-info">
+                    <div id="word-level-indicator"></div>
+                    <div id="progress-text">Progress: 0%</div>
+                </div>
+                <div id="progress-bar-bg">
+                    <div id="progress-bar-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="package_manifest.js?v=2"></script>
+    <script src="script.js?v=5"></script>
+    <link rel="stylesheet" href="style.css?v=2">
+</body>
+</html>
