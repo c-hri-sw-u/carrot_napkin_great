@@ -194,7 +194,7 @@ const app = {
         // Note: WarmUp options are shuffled but rendered in order in the DOM
         const parent = el.parentNode;
         const index = Array.from(parent.children).indexOf(el);
-        let pos = '_';
+        let pos = 'neutral';
         if (index === 0) pos = 'left';
         else if (index === 1) pos = 'middle';
         else if (index === 2) pos = 'right';
@@ -337,7 +337,7 @@ const app = {
                  // But if we are in "idle" state, it switches to "_".
                  // If we just clicked an option, we are in "left/right/middle".
                  // If we click background, we go to "_".
-                 app.updateCharacter('_');
+                 app.updateCharacter('neutral');
             }
         });
 

@@ -194,6 +194,49 @@ button:hover {
     transition: width 0.3s ease;
 }
 
+/* Game Header Controls */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Restrict width to keep items closer to center */
+    margin: 0 auto 20px auto; /* Center the header itself */
+    padding: 0;
+}
+
+#treat-counter,
+#settings-btn {
+    position: static !important; /* Override any lingering inline styles if present */
+    display: flex;
+    align-items: center;
+    height: 44px; /* Fixed equal height */
+    padding: 0 20px;
+    background-color: #f0f0f0; /* Light grey to stand out on white */
+    border-radius: 22px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    gap: 8px;
+    margin: 0;
+}
+
+#settings-btn {
+    width: auto; /* Override default button width */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#settings-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.treat-icon {
+    font-size: 20px;
+}
+
 /* Mobile adjustments */
 @media (max-width: 600px) {
     body {
@@ -238,5 +281,23 @@ button:hover {
         margin-bottom: 20px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .game-header {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0 30px; /* Increased padding for mobile */
+        max-width: 100%;
+        justify-content: space-between;
+        z-index: 10;
+        width: auto; /* Allow left/right to define width */
+    }
+
+    .screen {
+        position: relative; /* Ensure absolute children are relative to this */
     }
 }
